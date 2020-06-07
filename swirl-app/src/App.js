@@ -1,32 +1,51 @@
 import React from 'react';
 import {useState, useEffect} from 'react'
+import {Route} from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 import NavBar from './components/NavBar'
+import Main from './components/Main'
+import Detail from './components/Detail'
 
 function App() {
+  
   const [datas, setDatas] = useState([]);
-  useEffect(() => {
+  
+	useEffect(() => {
 		getDatas();
 		//eslint-disable-next-line
-  }, []);
-  function getDatas() {
-		const url = `http://localhost:8000/`;
+	}, []);
+	function getDatas() {
+    const url = `http://localhost:8000/`;
 		//fetch data
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				console.log(response)
+				console.log(response);
 				//set datas value and assign to datas array
-				setDatas(response);
-				// display last search item on page
+				setDatas(response); 
 			})
 			.catch(console.error);
 	}
+    
   return (
 		<div>
 			<NavBar />
-			<h2>hello</h2>
+			<Route
+				exact
+				path='/'
+				render={(routerProps) => {
+					return <Main datas={datas} />;
+				}}
+			/>
+			<Route
+				exact
+				path='/drinks/:id'
+				render={(routerProps) => {
+					return <Detail id={routerProps.match.params.id} />;
+				}}
+			/>
 		</div>
 	);
 }
