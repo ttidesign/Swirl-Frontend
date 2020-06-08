@@ -4,7 +4,7 @@ For this project I'll be doing an e-commerce website where I build the backend d
 
 ### MVP
 
-The webite will have 4 react components App-Navigation-Mainpage-Individual Page. The App component should render Nav and Mainpage where Mainpage is the container of images. When click on an item it should take user to the correct page display information about the clicked item. Nav should display on every page so users can navigate back to the home page. User will be able to add item to cart and view Cart page
+The website will have 4 react components App-Navigation-Mainpage-Individual Page. The App component should render Nav and Mainpage where Mainpage is the container of images. When click on an item it should take user to the correct page display information about the clicked item. Nav should display on every page so users can navigate back to the home page. User will be able to add item to cart and view Cart page
 
 ### Silver Goal
 
