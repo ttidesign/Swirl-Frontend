@@ -5,6 +5,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import NavBar from './components/NavBar'
+import CarouselPage from './components/CarouselPage'
 import Main from './components/Main'
 import Detail from './components/Detail'
 
@@ -32,6 +33,7 @@ function App() {
   return (
 		<div>
 			<NavBar />
+      <CarouselPage/>
 			<Route
 				exact
 				path='/'
